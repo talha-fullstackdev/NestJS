@@ -8,7 +8,7 @@ export class ProductsController {
         getProducts(){
            return this .productsService.getAllProducts()
         }
-        ///////////////////////////////////////////////
+        ////////////////////////////////////////////////
         @Get(":id") // hit  when a dynamic id come after products
         getProductsbyId(@Param("id") id:string){
             return this.productsService.getProductByID(Number(id))
