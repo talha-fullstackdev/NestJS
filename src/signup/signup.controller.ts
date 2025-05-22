@@ -5,6 +5,6 @@ import { Controller ,Get } from '@nestjs/common';
 export class SignupController {
      @Get()
      getSignup(){
-        return "welcome to signup page"
+        return "signup page"
      }
 }
