@@ -5,6 +5,6 @@ import { Controller ,Get} from '@nestjs/common';
 export class UserController {
     @Get()
     getUser(){
-        return "welcome to user route"
+        return "welcome to user page"
     }
 }
