@@ -10,22 +10,27 @@ export class ProductsService {
             price:"$20"
         },
         {
+            id :102,
+            name:"mobile",
+            price:"$200"
+        },
+        {
             id :103,
             name:"mouse",
             price:"$10"
         },
         {
-            id :103,
+            id :104,
             name:"keyboard",
             price:"$40"
         },
         {
-            id :103,
+            id :105,
             name:"lCD",
             price:"$140"
         },
         {
-            id :103,
+            id :106,
             name:"laptop",
             price:"$400",
             details:{
