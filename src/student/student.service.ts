@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class StudentService {
@@ -10,7 +10,25 @@ export class StudentService {
         {rollnumber:104,name:"Shameel Majeed",age:22},
         {rollnumber:105,name:"Usman Liaquat",age:24},
     ]
-    getStudent(){
+    /////////////// get http request methods
+    getALLStudents(){
         return this.students
+    }
+    getStudentById(id:number){
+      const student =  this.students.find((student)=>student.rollnumber===id)
+      if(!student){
+         throw new NotFoundException("no student found with this rollnumber")
+        
+      }
+      return student
+    }
+    //////////////post http method
+    createStudent(data:{name:string;age:number}){
+        const newStudent = {
+            rollnumber:Date.now(),
+            ...data // extract every thing from data that is name and age and store in it newstudent object
+        }
+        this.students.push(newStudent)
+        return {msg:"student added succesfully",newStudent}
     }
 }
