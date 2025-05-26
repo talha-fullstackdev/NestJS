@@ -2,4 +2,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class StudentService {}
+export class StudentService {
+    getStudent(){
+        return "Talha nawaz"
+    }
+}
