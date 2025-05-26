@@ -9,9 +9,10 @@ import { ProductsService } from './products/products.service';
 import { ProductsController } from './products/products.controller';
 import { EmployeeModule } from './employee/employee.module';
 import { CategoryModule } from './category/category.module';
+import { AddressModule } from './address/address.module';
 
 @Module({
-  imports: [EmployeeModule, CategoryModule],
+  imports: [EmployeeModule, CategoryModule, AddressModule],
   controllers: [AppController, UserController, LoginController, SignupController, ProductsController],
   providers: [AppService, ProductsService],
 })
