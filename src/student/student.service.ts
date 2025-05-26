@@ -18,7 +18,6 @@ export class StudentService {
       const student =  this.students.find((student)=>student.rollnumber===id)
       if(!student){
          throw new NotFoundException("no student found with this rollnumber")
-        
       }
       return student
     }
@@ -28,7 +27,7 @@ export class StudentService {
             rollnumber:Date.now(),
             ...data // extract every thing from data that is name and age and store in it newstudent object
         }
-        this.students.push(newStudent)
+        this.students.push(newStudent) // push the newstudent into students array
         return {msg:"student added succesfully",newStudent}
     }
         ////////////// PUT http method
@@ -41,7 +40,7 @@ export class StudentService {
         return this.students[index],{msg:"student updated"}
     }
        ////////////// PATCH http method
-       patchStudent(rollnumber:number,data:Partial<{name:string;age:number}>){
+       patchStudent(rollnumber:number,data:Partial<{name:string;age:number}>){ // partial means if any thing from name or age come it will works
         const student = this.getStudentById(rollnumber)  // we can also get student like this
         Object.assign(student,data)
         return{msg:'succesfully updated',student}
