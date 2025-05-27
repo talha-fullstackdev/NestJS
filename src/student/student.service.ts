@@ -3,7 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class StudentService {
-    private students =[
+    private students = [
         {rollnumber:101,name:"Talha Nawaz",age:25},
         {rollnumber:102,name:"Uzair Ansari",age:24},
         {rollnumber:103,name:"Daud Ahmad",age:23},
@@ -17,7 +17,7 @@ export class StudentService {
     getStudentById(id:number){
       const student =  this.students.find((student)=>student.rollnumber===id)
       if(!student){
-         throw new NotFoundException("no student found with this rollnumber")
+         throw new NotFoundException("no student found with this rollnumber") // throw exception in case of not found
       }
       return student
     }
@@ -33,7 +33,7 @@ export class StudentService {
         ////////////// PUT http method
     updateStudent(rollnumber:number,data:{name:string;age:number}){
         const index = this.students.findIndex((student)=>student.rollnumber===rollnumber)
-        if(index === -1){
+        if(index === -1){ // -1 index means no student found
           throw new NotFoundException("no student found with this rollnumber")
         }
         this.students[rollnumber]={rollnumber,...data}
