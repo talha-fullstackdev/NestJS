@@ -287,14 +287,14 @@ export class StudentService {
             student:this.students[index]
         }
     }
-       ////////////// PATCH http method
+       ////////////// PATCH http method///////////////
        patchStudent(rollnumber:number,data:Partial<{name:string;age:number;gender:string;marks:number;section:string;contact:{self:string;parent:string};address:{current:string;permanent:string}}>){ // partial means if any thing from name or age come it will works
         const student = this.getStudentById(rollnumber)  // we can also get student like this
         Object.assign(student,data)
         return{msg:'succesfully updated',student}
 
        }
-       ///////////////////// DELETE
+       ///////////////////// DELETE/////////////
        deleteStudent(rollnumber:number){
         const index = this.students.findIndex((student)=>student.rollnumber===rollnumber)
         if(index === -1){
