@@ -275,7 +275,7 @@ export class StudentService {
         this.students.push(newStudent) // push the newstudent into students array
         return {msg:"student added succesfully",newStudent}
     }
-        ////////////// PUT http method//////////////////
+        ////////////// PUT http method////////////////////
     updateStudent(rollnumber:number,data:{name:string;age:number;gender:string;marks:number;section:string;contact:{self:string;parent:string};address:{current:string;permanent:string}}){
         const index = this.students.findIndex((student)=>student.rollnumber===rollnumber)
         if(index === -1){ // -1 index means no student found
