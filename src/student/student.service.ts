@@ -266,7 +266,7 @@ export class StudentService {
       }
       return student
     }
-    //////////////POST http method////////////
+    //////////////POST http method//////////////
     createStudent(data:{name:string;age:number;gender:string;marks:number;section:string;contact:{self:string;parent:string};address:{current:string;permanent:string}}){
         const newStudent = {
             rollnumber:Date.now(),
