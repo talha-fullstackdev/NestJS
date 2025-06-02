@@ -255,7 +255,7 @@ export class StudentService {
     address: { current: "Gwadar", permanent: "Turbat" }
   }
 ];
-    /////////////// GET http request methods//////////////////
+    /////////////// GET http request methods/////////////////////
     getALLStudents(){
         return this.students
     }
