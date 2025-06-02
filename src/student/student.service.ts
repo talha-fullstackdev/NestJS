@@ -294,7 +294,7 @@ export class StudentService {
         return{msg:'succesfully updated',student}
 
        }
-       ///////////////////// DELETE///////////
+       ///////////////////// DELETE/////////////////
        deleteStudent(rollnumber:number){
         const index = this.students.findIndex((student)=>student.rollnumber===rollnumber)
         if(index === -1){
