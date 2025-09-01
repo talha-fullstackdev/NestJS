@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 @Injectable()
 export class ProductsService {
     private products = [
@@ -44,6 +45,11 @@ export class ProductsService {
         return this.products
     }
     getProductByID(id:number){
-        return this.products.find((product)=>product.id===id) // find product in products array with help of id
-    }
+        const product = this.products.find((product) => product.id === id);
+        if (!product) {
+        throw new NotFoundException(`Product with ID ${id} not found`);
+          }
+    return product;
+  }
 }
+
