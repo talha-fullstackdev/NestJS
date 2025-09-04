@@ -14,6 +14,6 @@ export class UserRolesController {
     }
     @Get("user-data")
     getUserData(){
-          return {msg:"any one can access data"}
+          return {msg:"any one can access "}
     }
 }

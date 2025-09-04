@@ -13,7 +13,7 @@ export class AddressService {
         gender:"male",
         contact:"03480951759",
         address:{
-            current_residence :"House #2 street 7 madina colony islamnagr walton road opposite toyota cant motors",
+            current_residence :"House #2 street 7 madina colony islamnagar walton road opposite toyota cant motors , lahore ",
             permanent:"house # 878 toheed colony jhani ,near PC hotel abbottabad"
         }
 

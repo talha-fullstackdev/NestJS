@@ -1,9 +1,11 @@
 /* eslint-disable prettier/prettier */
-import { Controller,Get} from '@nestjs/common';
+import { Controller,Get,UseGuards} from '@nestjs/common';
+import { LoginGuard } from 'src/guards/login/login.guard';
 @Controller('login')
 export class LoginController {
     @Get()
+    @UseGuards(LoginGuard)
     getlogin(){
-        return "login page"
+        return "login succesfull"
     }
 }
